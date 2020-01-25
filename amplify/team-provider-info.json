@@ -1,0 +1,14 @@
+{
+    "final": {
+        "awscloudformation": {
+            "AuthRoleName": "blockevent-20190418225159-authRole",
+            "UnauthRoleArn": "arn:aws:iam::108745968921:role/blockevent-20190418225159-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::108745968921:role/blockevent-20190418225159-authRole",
+            "Region": "us-east-1",
+            "DeploymentBucketName": "blockevent-20190418225159-deployment",
+            "UnauthRoleName": "blockevent-20190418225159-unauthRole",
+            "StackName": "blockevent-20190418225159",
+            "StackId": "arn:aws:cloudformation:us-east-1:108745968921:stack/blockevent-20190418225159/79daf150-61fe-11e9-a85c-12a109124258"
+        }
+    }
+}

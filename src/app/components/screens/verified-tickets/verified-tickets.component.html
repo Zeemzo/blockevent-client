@@ -1,0 +1,64 @@
+<nb-card>
+  <nb-card-body>
+    
+    <!-- <label class="search-label" for="search">Search:</label>
+    <input nbInput [nbFilterInput]="dataSource" id="search" class="search-input"> -->
+
+    <nb-card-body>
+      <h3 *ngIf="ticketsUnavailable">No Tickets Reserved Yet!</h3>
+      <h3 *ngIf="!ticketsUnavailable">Total Tickets: {{totalTickets}}</h3>
+      <h3 *ngIf="!ticketsUnavailable">Approved Tickets: {{approvedTickets}}</h3>
+
+
+    </nb-card-body>
+
+
+    <table *ngIf="!ticketsUnavailable" [nbSpinner]="showSpinner" nbSpinnerStatus="disabled" [nbTreeGrid]="dataSource"
+      [nbSort]="dataSource" (sort)="updateSort($event)">
+
+      <tr nbTreeGridHeaderRow *nbTreeGridHeaderRowDef="allColumns"></tr>
+      <tr nbTreeGridRow *nbTreeGridRowDef="let row; columns: allColumns"></tr>
+
+      <ng-container [nbTreeGridColumnDef]="customColumn">
+        <th nbTreeGridHeaderCell [nbSortHeader]="getSortDirection(customColumn)" *nbTreeGridHeaderCellDef>
+          {{customColumn}}
+        </th>
+        <td nbTreeGridCell *nbTreeGridCellDef="let row">
+          {{row.data[customColumn]}}
+        </td>
+      </ng-container>
+
+      <ng-container *ngFor="let column of defaultColumns; let index = index" [nbTreeGridColumnDef]="column"
+        [showOn]="getShowOn(index)">
+        <th nbTreeGridHeaderCell [nbSortHeader]="getSortDirection(column)" *nbTreeGridHeaderCellDef>
+          {{column}}
+        </th>
+        <td nbTreeGridCell *nbTreeGridCellDef="let row">{{row.data[column] || '-'}}</td>
+      </ng-container>
+
+    </table>
+
+  </nb-card-body>
+</nb-card>
+
+
+<div [(ngModel)]="dataSource" ngDefaultControl>
+  <div *ngFor="let ticket of dataSource">
+    <nb-card>
+      <nb-card-body>
+        <nb-list-item class='item'>
+          <nb-user name="{{ticket.email}}" title=""></nb-user>
+        </nb-list-item>
+        <nb-list-item class='item'>
+            <p>Ticket ID :   {{ticket.ticketID}}</p>
+        </nb-list-item>
+        <nb-list-item class='item'>
+            <p>Event ID  :   {{ticket.eventID}}</p>
+        </nb-list-item>
+        <nb-list-item class='item'>
+            <p>Status    :   {{ticket.status}}</p>
+        </nb-list-item>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>

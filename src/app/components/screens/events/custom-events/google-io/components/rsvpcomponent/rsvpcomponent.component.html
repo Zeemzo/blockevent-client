@@ -1,0 +1,97 @@
+<div class="container" *ngIf="!alreadySubmitted">
+
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="text-center" id="text-content">
+
+        <h5>We require your residential address to post your gift pack.</h5>
+        <h6 class="text-primary">
+          Due to the prevailing situation in the country, Google IO Extended Sri Lanka 2019 team has made the decision
+          to
+          cancel the event.
+          We are pleased to announce that you have been selected to receive a limited edition Google I/O Extended Sri
+          Lanka 2019 gift pack.
+        </h6>
+
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <div class="row">
+
+    <div class="col-md-12">
+
+      <form [formGroup]="rsvpFormGroup" (submit)="handleSubmit()">
+
+        <!-- Address Lines -->
+
+        <div class="form-group">
+          <label>Street Address One <span style="color: red">*</span></label>
+          <input formControlName="addressLineOne" type="input" class="form-control" placeholder="Address Line One">
+
+          <small class="form-text text-danger" *ngIf="formErrorList?.addressLineOne">Street Address One is required
+          </small>
+        </div>
+
+        <div class="form-group">
+          <label>Street Address Two (optional)</label>
+          <input formControlName="addressLineTwo" type="input" class="form-control" placeholder="Address Line Two">
+        </div>
+
+        <div class="form-group">
+          <label>Town / City <span style="color: red">*</span></label>
+          <input formControlName="city" type="input" class="form-control" placeholder="City">
+          <small class="form-text text-danger" *ngIf="formErrorList?.city">City is required </small>
+        </div>
+
+        <div class="form-group">
+          <label>Select Province <span style="color: red">*</span></label>
+          <select name="province" formControlName="province" class="form-control">
+            <option value="">Select Province</option>
+            <option *ngFor="let province of provinceList" value="{{province.toString()}}">{{province}}</option>
+
+          </select>
+          <small class="form-text text-danger" *ngIf="formErrorList?.province">Province is required </small>
+        </div>
+
+        <div class="form-group">
+          <label>Postal Code/ Zip <span style="color: red">*</span></label>
+          <input formControlName="postalcode" type="input" class="form-control" placeholder="Postal Code / Zip">
+          <small class="form-text text-danger" *ngIf="formErrorList?.postalcode">Postal Code is required </small>
+        </div>
+
+        <div class="form-group">
+          <input nbButton fullWidth shape="rectangle" hero status="primary" type="submit" value="{{buttonText}}"
+            disabled="{{disableButton}}" />
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+</div>
+
+
+
+<div class="container" *ngIf="alreadySubmitted">
+
+  <div class="row">
+    <div class="col-md-12">
+
+      <div class="text-center" id="text-content">
+        <h6 class="text-primary">
+          Thank you for being part of Google I/O Extended Sri
+          Lanka 2019. Your gift pack will be posted to you sooner
+        </h6>
+
+      </div>
+
+    </div>
+  </div>
+
+</div>

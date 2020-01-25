@@ -1,0 +1,23 @@
+.logo img {
+    width: 250px;
+}
+
+
+.main-header-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.header-link-container .navbar-nav {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.header-link-container {
+    width: 180px;
+}

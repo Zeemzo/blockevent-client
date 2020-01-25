@@ -1,0 +1,80 @@
+.event-image {
+  height: 250px;
+  background-position: center;
+  background-size: cover;
+  /* filter: blur(1px); */
+}
+
+a{ color: #000080	; }
+
+a:hover{ color: #001999	; }
+
+.event-cover {
+  width: 100%;
+  overflow: hidden;
+  background-color: black;
+}
+.event-cover > img {
+  position: relative;
+  width: 100%;
+}
+
+.meta-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.meta-item > * {
+  margin: 0;
+}
+
+.meta-item > i {
+  font-size: 2.5rem;
+  /* font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; */
+}
+
+i.eva.eva-map-outline {
+}
+
+.meta-item > p,
+.meta-item > a {
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.25;
+  margin-left: 0.683rem;
+}
+
+.meta-item > a > * {
+  margin: 0;
+}
+
+.organizer-list > * {
+  margin-bottom: 12px;
+}
+
+.event-meta-header > h4 {
+  color: rgba(46, 62, 72, 0.6);
+  margin: 0;
+  padding: 0;
+  font-size: 1.25rem;
+  text-transform: capitalize;
+}
+
+.event-meta-header > h1 {
+  margin: 0;
+  font-size: 1.9rem;
+}
+
+#warning {
+  color: red;
+  align-self: center;
+}
+
+#Raffle {
+  align-self: center;
+}
+
+.qrcode {
+  align-self: center;
+}

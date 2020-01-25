@@ -1,0 +1,68 @@
+<nb-layout>
+  <nb-layout-header fixed>
+
+
+    <div class="container">
+      <div class="row">
+          <div class="main-header-container justify-content-between">
+
+      
+              <div class="logo">
+                <img id='blocklogo' [routerLink]="['/']" src="./assets/logo1.png" alt="" srcset="">
+              </div>
+        
+              <div class="header-link-container" *ngIf="!userDetails && !showSignOut">
+                  <ul class="navbar-nav">
+                      <li class="nav-item active">
+                        <a class="nav-link text-primary font-weight-bold" [routerLink]="['/login']">Login <span class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="nav-item active">
+                        <a class="nav-link text-primary font-weight-bold" [routerLink]="['/register']">Register <span class="sr-only">(current)</span></a>
+                      </li>
+                     
+                      </ul>
+              </div>
+        
+            
+        
+        
+              <div class="login-btn-container" *ngIf="userDetails && showSignOut">
+                <!-- <button nbButton shape="round" (click)="goToSignIn()">Sign In</button> -->
+                <!-- <button nbButton shape="round" (click)="logoutUser()" *ngIf="showSignOut">Logout</button> -->
+        
+                <!-- This is where the  use thingy come -->
+                <div class="user-badge" >
+                  <nb-user name="{{userDetails.username}}" title="" [nbContextMenu]="items" nbContextMenuTag="user-menu">
+                  </nb-user>
+                </div>
+              </div>
+        
+        
+            </div>
+      </div>
+    </div>
+
+
+  </nb-layout-header>
+
+  <!-- <nb-sidebar>Sidebar Content</nb-sidebar> -->
+
+
+
+  <nb-layout-column [className]="isHome ? 'removedPaddingForHome' : ''">
+
+
+    <router-outlet>
+      <!-- <div>
+          <button nbButton shape="round" (click)="goToSignIn()">Sign In</button>
+          <button nbButton shape="round" (click)="goToRegister()">Register</button>
+          <button nbButton shape="round" (click)="goToEvent()">Event</button>
+          <button nbButton shape="round" (click)="goToScanner()">Scanner</button>
+        </div> -->
+    </router-outlet>
+
+
+  </nb-layout-column>
+
+
+</nb-layout>
