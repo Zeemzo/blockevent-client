@@ -1,0 +1,63 @@
+<!-- event 1 -->
+<div class="container">
+  <!-- event 1 -->
+
+  <nb-card [nbSpinner]="isLoading">
+    <nb-card-body *ngIf="isloaded">
+      <a href='https://www.facebook.com/events/325650311487319/' target="_blank">
+        <div class="event-cover">
+          <img *ngIf="!isSelected && !isRegistered" src="./assets/closed.jpg" alt="" srcset="">
+          <img *ngIf="isSelected && isRegistered" src="./assets/google-io-gift-pack.jpg" alt="" srcset="">
+        </div>
+
+      </a>
+
+      <div class="event-details" *ngIf="isloaded">
+        <nb-list>
+          <nb-list-item>
+            <div class="event-meta-header text-center">
+
+              <h5>Google I/O Extended Sri Lanka 2019 Registration</h5>
+            </div>
+          </nb-list-item>
+
+          <nb-list-item *ngIf="(isRegistered && !isSelected)">
+
+            <div class="event-meta-header text-center ">
+
+              <h4 class="text-primary" id="alreadySelected">Thank you for registering</h4>
+              <h4 class="text-primary" id="alreadySelected">unfortunately, you have not got through the selection
+                process. </h4>
+              <h4 class="text-primary" id="alreadySelected">Hope to see you for the next Google IO Extended Sri Lanka
+              </h4>
+            </div>
+
+          </nb-list-item>
+
+          <nb-list-item *ngIf="!isRegistered">
+
+            <div class="event-meta-header text-center ">
+
+              <h4 class="text-primary" id="alreadySelected">Google I/O Extended Sri Lanka 2019 registrations are now
+                closed. </h4>
+              <h4 class="text-primary" id="alreadySelected"> Thank you to all 9500+ people who registered.</h4>
+            </div>
+          </nb-list-item>
+
+        </nb-list>
+
+
+      </div>
+      <!-- <section>
+
+        <app-googleioregistration (hideRegistrationEmitter)="hideRegistrationForm()"></app-googleioregistration>
+
+      </section> -->
+      <section *ngIf="isSelected && isRegistered">
+
+        <app-rsvpcomponent [alreadySubmitted]="alreadySubmitted" ></app-rsvpcomponent>
+      </section>
+
+    </nb-card-body>
+  </nb-card>
+</div>
