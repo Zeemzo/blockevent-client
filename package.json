@@ -30,7 +30,7 @@
     "aws-amplify": "^1.1.26",
     "aws-amplify-angular": "^3.0.1",
     "@aws-amplify/cli": "^0.1.32",
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.3.1",
     "core-js": "^2.5.4",
     "crypto-js": "^3.1.9-1",
